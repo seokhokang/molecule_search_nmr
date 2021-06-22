@@ -2,7 +2,6 @@ import numpy as np
 from numpy import dot
 from numpy.linalg import norm
 from scipy.optimize import minimize
-import pickle as pkl
 
 
 def query_preprocess(query):
