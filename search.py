@@ -58,8 +58,7 @@ alpha = 0.05
 
 
 ## sample data import
-with open('sample_data.pickle', 'rb') as f:
-    (query, pool) = pkl.load(f)
+[query, pool] = np.load('./sample_data.npz', allow_pickle = True)['data']
 
 query_y_vals, query_x_vals, query_x_peaks = query_preprocess(query)
 
