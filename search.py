@@ -17,20 +17,9 @@ def cos_sim(a,b): return dot(a, b)/(norm(a)*norm(b))
 
 def sum_sq_diff(a,b): return np.sum(np.square(a/np.sum(a) - b/np.sum(b)))
 
-def estimate(x, mu, sigma):
+def estimate(x, mu, sigma): return np.sum([np.exp(-np.abs(x - mu[j] - shifts_aligned[j])/sigma[j]) for j in range(n_shifts)], 0)
 
-    out = np.zeros(len(x))
-    for j in range(n_shifts):
-        out = out + np.exp(-np.abs(x - mu[j] - shifts_aligned[j])/sigma[j])
-        
-    return out
-
-def get_spect(var, x_vals):
-
-    mu = var[:n_shifts]
-    sigma = np.exp(var[n_shifts:])
-    
-    return estimate(x_vals, mu, sigma)
+def get_spect(var, x_vals): return estimate(x_vals, var[:n_shifts], np.exp(var[n_shifts:]))
 
 def opt_fun(var):
 
