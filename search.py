@@ -86,7 +86,7 @@ for mol_id in pool.keys():
         shifts_optimized = opt_res.x[:n_shifts] + shifts_aligned
         estimated_y_vals = get_spect(opt_res.x, query_x_vals)
         
-        score = cos_sim(query_y_vals, estimated_y_vals) - alpha * np.sqrt(np.sum(np.square(shifts_optimized - shifts)))
+        score = cos_sim(query_y_vals, estimated_y_vals) - alpha * norm(shifts_optimized - shifts)
 
         results[mol_id] = score
 
