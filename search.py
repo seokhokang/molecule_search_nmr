@@ -88,4 +88,4 @@ for mol_id in pool.keys():
 
 
 results = dict(sorted(results.items(), reverse=True, key=lambda item: item[1])[:10])
-print(results)
+for i, r in enumerate(results): print(i+1, r, results[r])
