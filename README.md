@@ -1,5 +1,5 @@
 # molecule_search_nmr
-Implementation of the algorithm described in the paper [Molecule search by NMR spectrum based on molecule-to-spectrum estimation](https://doi.org/10.1038/s41598-021-00488-z)
+Implementation of the algorithm described in the paper [Molecular search by NMR spectrum based on evaluation of matching between spectrum and molecule](https://doi.org/10.1038/s41598-021-00488-z)
 
 ## Components
 - **search.py** - code for molecule search by NMR spectrum
